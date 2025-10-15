@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Login Vault</title></head>
+<body>
+  <h2>Vault Login</h2>
+  <div th:if="${error}" style="color:red" th:text="${error}"></div>
+  <form method="post" action="/login">
+    <label>Master password: <input type="password" name="master" /></label><br/><br/>
+    <button type="submit">Unlock</button>
+  </form>
+  <p>App binds to localhost only. Do not expose to public network.</p>
+</body>
+</html>

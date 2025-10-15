@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Vault Dashboard</title></head>
+<body>
+  <h2>Vault Dashboard</h2>
+  <p><a href="/add">Add credential</a> | <a href="/logout">Lock</a></p>
+  <table border="1" cellpadding="6">
+    <tr><th>#</th><th>Site</th><th>Username</th><th>Actions</th></tr>
+    <tr th:each="cred,iterStat : ${list}">
+      <td th:text="${iterStat.index + 1}"></td>
+      <td th:text="${cred.site}"></td>
+      <td th:text="${cred.username}"></td>
+      <td>
+        <!-- view password inline (not recommended for public) -->
+        <form style="display:inline" method="post" action="/delete">
+          <input type="hidden" name="idx" th:value="${iterStat.index}" />
+          <button type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
