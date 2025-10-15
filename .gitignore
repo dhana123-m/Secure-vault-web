@@ -1,0 +1,16 @@
+# Maven target folder
+/target/
+
+# Eclipse / IntelliJ
+/.idea/
+/*.iml
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Spring Boot properties
+*.properties

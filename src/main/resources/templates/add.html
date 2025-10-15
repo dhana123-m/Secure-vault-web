@@ -1,14 +1,113 @@
 <!doctype html>
-<html>
-<head><meta charset="utf-8"><title>Add</title></head>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Add Credential</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ABE2, #5563DE);
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      width: 400px;
+      padding: 30px;
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 25px;
+      font-size: 1.8em;
+    }
+
+    form label {
+      display: block;
+      text-align: left;
+      font-weight: bold;
+      color: #555;
+      margin: 10px 0 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 1em;
+      transition: border 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #5563DE;
+      box-shadow: 0 0 5px rgba(85, 99, 222, 0.5);
+    }
+
+    button {
+      background: #5563DE;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1em;
+      width: 100%;
+      margin-top: 15px;
+      transition: background 0.3s ease, transform 0.1s ease;
+    }
+
+    button:hover {
+      background: #3949ab;
+      transform: scale(1.02);
+    }
+
+    a {
+      text-decoration: none;
+      color: #5563DE;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 15px;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #3949ab;
+    }
+  </style>
+</head>
 <body>
-  <h2>Add credential</h2>
-  <form method="post" action="/add">
-    <label>Site: <input name="site"/></label><br/>
-    <label>Username: <input name="username"/></label><br/>
-    <label>Password: <input name="password"/></label><br/>
-    <button type="submit">Add</button>
-  </form>
-  <p><a href="/dashboard">Back</a></p>
+  <div class="container">
+    <h2>🔐 Add Credential</h2>
+    <form method="post" action="/add">
+      <label>Site</label>
+      <input name="site" placeholder="Enter website name" required />
+
+      <label>Username</label>
+      <input name="username" placeholder="Enter your username" required />
+
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Enter password" required />
+
+      <button type="submit">Add Credential</button>
+    </form>
+    <a href="/dashboard">⬅ Back to Dashboard</a>
+  </div>
 </body>
 </html>

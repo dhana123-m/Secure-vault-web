@@ -5,7 +5,7 @@ services:
     image: secure-vault-web:1.0
     container_name: secure-vault-web
     ports:
-      - "127.0.0.1:9090:90"   # bound to localhost only
+      - "9092"   # bound to localhost only
     volumes:
       - ./vault-data:/data       # host folder will hold vault.spm
     restart: unless-stopped
