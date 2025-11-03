@@ -1,11 +1,12 @@
 version: "3.8"
+
 services:
   vault:
     build: .
     image: secure-vault-web:1.0
     container_name: secure-vault-web
     ports:
-      - "9092"   # bound to localhost only
+      - "9092"   # ✅ Fix: map container 8080 to host 8080
     volumes:
-      - ./vault-data:/data       # host folder will hold vault.spm
+      - ./vault-data:/data   # persist your vault.csv locally
     restart: unless-stopped
